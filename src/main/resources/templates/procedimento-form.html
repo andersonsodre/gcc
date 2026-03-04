@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${procedimento.id == null} ? 'Novo Procedimento' : 'Editar Procedimento'"></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg,#0f3057,#00587a,#008891);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(0,0,0,0.35);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 2px #00ffd5;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        .actions {
+            margin-top: 30px;
+        }
+
+        .btn-save {
+            background: #00ffd5;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            color: #003333;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-save:hover {
+            opacity: 0.85;
+        }
+
+        .btn-back {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2 th:text="${procedimento.id == null} ? '➕ Novo Procedimento' : '✏ Editar Procedimento'"></h2>
+
+    <form th:action="@{/procedimentos/salvar}" th:object="${procedimento}" method="post">
+
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Grupo</label>
+                <input type="text" th:field="*{grupo}" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Sub-Grupo</label>
+                <input type="text" th:field="*{subGrupo}" required/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Forma de Organização</label>
+            <input type="text" th:field="*{formaOrganizacao}" required/>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Código</label>
+                <input type="text" th:field="*{codigo}" required/>
+            </div>
+
+            <div class="form-group">
+                <label>Nome do Procedimento</label>
+                <input type="text" th:field="*{nome}" required/>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="btn-save">
+                💾 Salvar
+            </button>
+
+            <a th:href="@{/procedimentos}" class="btn-back">
+                ← Voltar
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

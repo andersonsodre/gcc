@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard | Centro Cirúrgico Premium</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+        }
+
+        /* Topbar */
+        .topbar {
+            background: linear-gradient(135deg, #0c1f3f, #154c79);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .topbar h1 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .user-info {
+            font-size: 14px;
+        }
+
+        .logout-btn {
+            margin-left: 20px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: none;
+            background: #ffffff22;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #ffffff44;
+        }
+
+        /* Content */
+        .container {
+            padding: 40px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h2 {
+            font-weight: 500;
+            color: #0c1f3f;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #154c79;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 26px;
+            font-weight: 600;
+            color: #0c1f3f;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <h1>Centro Cirúrgico Premium</h1>
+
+    <div>
+        <span class="user-info">
+            Bem-vindo, <strong th:text="${username}"></strong>
+        </span>
+
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button type="submit" class="logout-btn">Sair</button>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="welcome">
+        <h2>Painel Administrativo</h2>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Cirurgias Hoje</h3>
+            <p>12</p>
+        </div>
+
+        <div class="card">
+            <h3>Pacientes Internados</h3>
+            <p>38</p>
+        </div>
+
+        <div class="card">
+            <h3>Salas Ativas</h3>
+            <p>5</p>
+        </div>
+
+        <div class="card">
+            <h3>Profissionais em Plantão</h3>
+            <p>24</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

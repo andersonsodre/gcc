@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Centro Cirúrgico - Sistema de Gestão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f3057, #00587a, #008891);
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00ffd5;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        /* Indicadores */
+        .indicadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 60px;
+        }
+
+        .indicador {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: 0.3s;
+        }
+
+        .indicador:hover {
+            transform: translateY(-5px);
+        }
+
+        .indicador h3 {
+            font-size: 36px;
+            color: #00ffd5;
+        }
+
+        /* Cirurgias do Dia */
+        .cirurgias {
+            padding: 60px;
+        }
+
+        .cirurgias h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background: rgba(0,0,0,0.3);
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Comunicados */
+        .avisos {
+            padding: 60px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .aviso-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media(max-width: 768px){
+            .navbar {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1>🏥 Centro Cirúrgico - Gestão</h1>
+    <div>
+        <a href="#">Painel</a>
+        <a href="#">Mapa Cirúrgico</a>
+        <a href="#">Pacientes</a>
+        <a href="#">Relatórios</a>
+        <a href="#">Sair</a>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <h2> PS Roberto Macedo - Gestão Inteligente do Centro Cirúrgico</h2>
+    <p>
+        Plataforma integrada para controle do mapa cirúrgico, monitoramento de salas,
+        gestão de equipe, pacientes e indicadores operacionais.
+    </p>
+</section>
+
+<!-- Indicadores -->
+<section class="indicadores">
+    <div class="indicador">
+        <h3>12</h3>
+        <p>Cirurgias Agendadas Hoje</p>
+    </div>
+
+    <div class="indicador">
+        <h3>3</h3>
+        <p>Salas em Uso</p>
+    </div>
+
+    <div class="indicador">
+        <h3>2</h3>
+        <p>Em Recuperação</p>
+    </div>
+
+    <div class="indicador">
+        <h3>95%</h3>
+        <p>Taxa de Ocupação</p>
+    </div>
+</section>
+
+<!-- Cirurgias do Dia -->
+<section class="cirurgias">
+    <h2>📋 Mapa Cirúrgico - Hoje</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Horário</th>
+            <th>Paciente</th>
+            <th>Procedimento</th>
+            <th>Cirurgião</th>
+            <th>Sala</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>07:30</td>
+            <td>Maria Souza</td>
+            <td>Herniorrafia</td>
+            <td>Dr. Almeida</td>
+            <td>01</td>
+            <td>Finalizada</td>
+        </tr>
+        <tr>
+            <td>09:00</td>
+            <td>João Pereira</td>
+            <td>Colecistectomia</td>
+            <td>Dra. Costa</td>
+            <td>02</td>
+            <td>Em Andamento</td>
+        </tr>
+        <tr>
+            <td>11:30</td>
+            <td>Ana Lima</td>
+            <td>Artroscopia</td>
+            <td>Dr. Mendes</td>
+            <td>03</td>
+            <td>Aguardando</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Comunicados -->
+<section class="avisos">
+    <h2>📢 Comunicados Operacionais</h2>
+
+    <div class="aviso-item">
+        <strong>Manutenção Preventiva</strong>
+        <p>Sala 04 estará indisponível amanhã das 08h às 12h.</p>
+    </div>
+
+    <div class="aviso-item">
+        <strong>Atualização de Protocolo</strong>
+        <p>Revisão do checklist de cirurgia segura disponível na intranet.</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 - Sistema de Gestão do Centro Cirúrgico | TI Hospitalar
+</footer>
+
+</body>
+</html>

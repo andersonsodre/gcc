@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Procedimentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg,#0f3057,#00587a,#008891);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.35);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .top-actions {
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            background: #00ffd5;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #003333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.8;
+        }
+
+        .btn-back {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        thead {
+            background: rgba(0,0,0,0.4);
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        tbody tr {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .acoes a {
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .editar {
+            color: #ffc107;
+        }
+
+        .excluir {
+            color: #ff4d4d;
+        }
+
+        .codigo {
+            font-weight: 600;
+            color: #00ffd5;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>📋 Gestão de Procedimentos</h2>
+
+    <div class="top-actions">
+        <a th:href="@{/procedimentos/novo}" class="btn-primary">
+            + Novo Procedimento
+        </a>
+
+        <a th:href="@{/}" class="btn-back">
+            ← Voltar ao Dashboard
+        </a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="width:15%">Código</th>
+            <th style="width:20%">Grupo</th>
+            <th style="width:20%">SubGrupo</th>
+            <th style="width:20%">Forma Organização</th>
+            <th style="width:15%">Nome</th>
+            <th style="width:10%">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${procedimentos}">
+            <td class="codigo" th:text="${p.codigo}"></td>
+            <td th:text="${p.grupo}"></td>
+            <td th:text="${p.subGrupo}"></td>
+            <td th:text="${p.formaOrganizacao}"></td>
+            <td th:text="${p.nome}"></td>
+            <td class="acoes">
+                <a th:href="@{'/procedimentos/editar/' + ${p.id}}" class="editar">Editar</a>
+                |
+                <a th:href="@{'/procedimentos/excluir/' + ${p.id}}"
+                   onclick="return confirm('Deseja excluir este procedimento?')"
+                   class="excluir">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

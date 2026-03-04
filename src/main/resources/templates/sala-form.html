@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Cadastro Sala</title>
+</head>
+<body style="background:linear-gradient(135deg,#0f3057,#00587a,#008891);
+             font-family:Poppins;color:white;padding:40px;">
+
+<div style="max-width:600px;margin:auto;background:rgba(0,0,0,0.3);
+            padding:40px;border-radius:20px;backdrop-filter:blur(10px);">
+
+  <h2 th:text="${sala.id == null} ? 'Nova Sala' : 'Editar Sala'"></h2>
+
+  <form th:action="@{/salas/salvar}" th:object="${sala}" method="post">
+
+    <input type="hidden" th:field="*{id}"/>
+
+    <div style="margin-bottom:15px;">
+      <label>Nome</label><br>
+      <input type="text" th:field="*{nome}" required style="width:100%;padding:8px;">
+    </div>
+
+    <div style="margin-bottom:15px;">
+      <label>Descrição</label><br>
+      <input type="text" th:field="*{descricao}" style="width:100%;padding:8px;">
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <label>
+        <input type="checkbox" th:field="*{ativa}"/> Sala Ativa
+      </label>
+    </div>
+
+    <button type="submit"
+            style="background:#00ffd5;border:none;padding:10px 20px;
+                   border-radius:8px;font-weight:600;color:#003333;">
+      Salvar
+    </button>
+
+  </form>
+
+</div>
+
+</body>
+</html>

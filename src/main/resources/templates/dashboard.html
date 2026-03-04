@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Centro Cirúrgico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f3057, #00587a, #008891);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+        }
+
+        .navbar .user-info {
+            font-weight: 500;
+            color: #00ffd5;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00ffd5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .indicadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 60px;
+        }
+
+        .indicador {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: 0.3s;
+        }
+
+        .indicador:hover {
+            transform: translateY(-5px);
+        }
+
+        .indicador h3 {
+            font-size: 36px;
+            color: #00ffd5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 768px){
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1>GCC | Gestão de Centro Cirúrgico</h1>
+
+    <div>
+        <span class="user-info">
+            👤 <span th:text="${usuarioLogado}"></span>
+        </span>
+
+        <a th:href="@{/dashboard}">Painel</a>
+        <a th:href="@{/cirurgias}">Mapa Cirúrgico</a>
+        <a th:href="@{/procedimentos}">Procedimentos</a>
+        <a href="/salas">Salas</a>
+        <a href="#">Relatórios</a>
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button type="submit"
+                    style="background:none; border:none; color:white; margin-left:20px; cursor:pointer; font-size:14px;">
+                Sair
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <h2>PS Roberto Macedo</h2>
+    <p>Gestão Inteligente do Centro Cirúrgico</p>
+</section>
+
+
+
+<!-- Indicadores -->
+<section class="indicadores">
+    <div class="indicador">
+        <h3>12</h3>
+        <p>Cirurgias Hoje</p>
+    </div>
+
+    <div class="indicador">
+        <h3>3</h3>
+        <p>Salas em Uso</p>
+    </div>
+
+    <div class="indicador">
+        <h3>2</h3>
+        <p>Em Recuperação</p>
+    </div>
+
+    <div class="indicador">
+        <h3>95%</h3>
+        <p>Taxa de Ocupação</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 - Sistema de Gestão do Centro Cirúrgico | by Anderson Sodré
+</footer>
+
+</body>
+</html>

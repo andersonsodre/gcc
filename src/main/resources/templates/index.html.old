@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet Corporativa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00e0ff;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.9;
+        }
+
+        .hero button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            background: #00e0ff;
+            color: black;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: white;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 60px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #00e0ff;
+        }
+
+        /* Avisos */
+        .avisos {
+            padding: 60px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .avisos h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .aviso-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media(max-width: 768px){
+            .navbar {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1>Intranet Corporativa</h1>
+    <div>
+        <a href="www.institutoacqua.org.br">Início</a>
+        <a href="#">Usuários</a>
+        <a href="#">Relatórios</a>
+        <a href="#">Configurações</a>
+        <a href="#">Sair</a>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <h2>Bem-vindo ao Sistema de Demonstração</h2>
+    <p>
+        Plataforma interna desenvolvida para gerenciamento de informações,
+        usuários e relatórios corporativos com segurança e eficiência.
+    </p>
+    <button>Acessar Painel</button>
+</section>
+
+<!-- Funcionalidades -->
+<section class="cards">
+    <div class="card">
+        <h3>Gestão de Usuários</h3>
+        <p>Controle completo de cadastro, permissões e autenticação de colaboradores.</p>
+    </div>
+
+    <div class="card">
+        <h3>Relatórios</h3>
+        <p>Visualização e exportação de relatórios gerenciais em tempo real.</p>
+    </div>
+
+    <div class="card">
+        <h3>Controle Interno</h3>
+        <p>Gerencie processos internos com segurança e rastreabilidade.</p>
+    </div>
+
+    <div class="card">
+        <h3>Segurança</h3>
+        <p>Sistema protegido com autenticação segura e controle de acessos.</p>
+    </div>
+</section>
+
+<!-- Avisos -->
+<section class="avisos">
+    <h2>📢 Comunicados Internos</h2>
+
+    <div class="aviso-item">
+        <strong>Atualização do Sistema</strong>
+        <p>Nova versão disponível com melhorias de desempenho.</p>
+    </div>
+
+    <div class="aviso-item">
+        <strong>Treinamento Interno</strong>
+        <p>Treinamento para colaboradores será realizado na próxima semana.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2026 - Sistema de Demonstração Intranet | Desenvolvido por TI
+</footer>
+
+</body>
+</html>
