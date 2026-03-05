@@ -43,5 +43,51 @@ public class Procedimento {
         this.nome = nome;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    public String getSubGrupo() {
+        return subGrupo;
+    }
+
+    public void setSubGrupo(String subGrupo) {
+        this.subGrupo = subGrupo;
+    }
+
+    public String getFormaOrganizacao() {
+        return formaOrganizacao;
+    }
+
+    public void setFormaOrganizacao(String formaOrganizacao) {
+        this.formaOrganizacao = formaOrganizacao;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
